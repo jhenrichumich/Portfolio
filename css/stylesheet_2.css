@@ -64,21 +64,33 @@ body {
     perspective: 2px;
 }
 
+
+/* Home */
+
 .title {
-    padding-bottom: 50px;
     width: 100%;
+    overflow: auto;
+    position: relative;
+    z-index: initial;
+}
+
+.title_mid {
+    height: 70px;
+    background: linear-gradient(to top, rgba(251, 251, 251, 1) 0%, rgba(251, 251, 251, 0) 100%);
+    position: relative;
+}
+
+.title_end {
+    background-color: rgba(251, 251, 251, 1);
 }
 
 .title>h1 {
     text-align: center;
     position: fixed;
-    z-index: -1;
+    z-index: 0;
     width: 100%;
     margin: 0 auto;
 }
-
-
-/* Home */
 
 .top_row {
     display: grid;
@@ -86,12 +98,68 @@ body {
     grid-gap: 50px;
     background-color: rgb(2, 102, 0);
     padding: 25px;
-    z-index: -1;
-    position: fixed;
+    z-index: 1;
+    position: relative;
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .column {
     display: grid;
+    z-index: 1;
+}
+
+.column>img {
+    width: 325px;
+    z-index: 1;
 }
 
 .column_2 {
@@ -101,12 +169,14 @@ body {
     margin-left: -10px;
     padding: 20px;
     text-align: center;
+    z-index: 1;
 }
 
 .column>p {
     position: center;
     font-size: 100em;
     margin: auto auto auto auto;
+    z-index: 1;
 }
 
 .arrow {
@@ -122,13 +192,18 @@ body {
 }
 
 .bottom_row {
-    margin-top: 425px;
+    position: relative;
     background-color: white;
-    padding: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+    z-index: 2;
 }
 
 .bottom_row>p {
     font-size: 20px;
+    z-index: 2;
 }
 
 .footer {
@@ -191,7 +266,6 @@ body {
     float: left;
     width: 180px;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .gallery img {
